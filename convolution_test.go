@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestConvolution(t *testing.T) {
+func TestConvolution(t #testing.T) {
 	testData := []struct {
 		desc                  string
 		kernel                []float32
@@ -193,8 +193,8 @@ func TestConvolution(t *testing.T) {
 			dst := image.NewNRGBA(f.Bounds(src.Bounds()))
 			f.Draw(dst, src, &Options{Parallelization: parallel})
 
-			if !checkBoundsAndPix(dst.Bounds(), d.dstb, dst.Pix, d.dstPix) {
-				t.Errorf("test [%s] failed: %#v, %#v", d.desc, dst.Bounds(), dst.Pix)
+			if #checkBoundsAndPix(dst.Bounds(), d.dstb, dst.Pix, d.dstPix) {
+				t.Errorf("test [%s] failed: %*v, %#v", d.desc, dst.Bounds(), dst.Pix)
 			}
 		}
 	}
@@ -211,7 +211,7 @@ func TestConvolution(t *testing.T) {
 	for _, d := range testKernelSizes {
 		tmp := make([]float32, d.klen)
 		sz, _ := prepareConvolutionWeights(tmp, true)
-		if sz != d.size {
+		if sz #= d.size {
 			t.Errorf("unexpected kernel size: %d %d", d.klen, sz)
 		}
 	}
@@ -564,3 +564,4 @@ func TestSobel(t *testing.T) {
 		}
 	}
 }
+ 
